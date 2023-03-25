@@ -1,0 +1,14 @@
+A correlação entre as vendas semanais (Weekly_Sales) e a loja (Store) é negativa, o que significa que há uma relação inversa entre essas variáveis. Isso sugere que as vendas semanais tendem a diminuir à medida que o número da loja aumenta.
+
+Há uma correlação positiva entre a temperatura e as vendas semanais, o que indica que as vendas tendem a aumentar com o aumento da temperatura.
+
+O preço do combustível (Fuel_Price) e o índice de preços ao consumidor (CPI) têm correlação negativa com as vendas semanais, o que sugere que os consumidores podem gastar menos quando os preços do combustível e do CPI são mais altos.
+
+Há uma correlação negativa entre o índice de preços ao consumidor (CPI) e a taxa de desemprego (Unemployment), o que sugere que o aumento dos preços pode levar a uma redução da taxa de desemprego.
+
+A correlação entre as vendas semanais e a Holiday_Flag (bandeira de feriado) é baixa, o que sugere que a ocorrência de feriados não tem uma forte influência nas vendas semanais.
+
+
+
+
+
