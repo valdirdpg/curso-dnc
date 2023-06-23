@@ -1,0 +1,69 @@
+Galera datasets:
+Banco central:
+https://dadosabertos.bcb.gov.br/dataset
+_______________________________________________
+big and small algorithm:
+
+https://www.kaggle.com/datasets/zalando-research/fashionmnist
+
+https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction
+
+https://www.kaggle.com/datasets/sanikamal/rock-paper-scissors-dataset
+
+____________________________________________________
+
+Regression Datasets:
+
+https://www.kaggle.com/datasets/vikrishnan/boston-house-prices
+
+https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who
+
+https://www.kaggle.com/datasets/camnugent/california-housing-prices
+____________________________________________________
+General Classification Problems:
+
+https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset
+
+https://www.kaggle.com/datasets/benroshan/factors-affecting-campus-placement
+______________________________________________________
+Image Classification Problems:
+
+https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+
+https://www.kaggle.com/datasets/andrewmvd/face-mask-detection
+
+https://www.kaggle.com/datasets/puneet6060/intel-image-classification
+____________________________________________________
+Recommender Systems:
+
+https://www.kaggle.com/datasets/grouplens/movielens-20m-dataset
+
+https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks
+
+https://www.kaggle.com/datasets/shivamb/netflix-shows
+____________________________________________________
+Time Series Analysis:
+
+https://www.kaggle.com/datasets/carrie1/ecommerce-data
+
+https://raw.githubusercontent.com/jbrownlee/Datasets/master/daily-min-temperatures.csv
+
+https://www.kaggle.com/datasets/uciml/electric-power-consumption-data-set
+__________________________________________________
+Large Scale Text Datasets for NLP tasks:
+
+https://www.kaggle.com/datasets/bittlingmayer/amazonreviews
+
+https://www.kaggle.com/datasets/allen-institute-for-ai/CORD-19-research-challenge
+
+https://www.kaggle.com/datasets/Cornell-University/arxiv
+
+https://www.kaggle.com/datasets/rmisra/news-headlines-dataset-for-sarcasm-detection
+
+https://www.kaggle.com/datasets/imoore/60k-stack-overflow-questions-with-quality-rate
+___________________________________________________
+Text — Optical Character Recognition:
+
+https://www.kaggle.com/datasets/landlord/handwriting-recognition
+
+https://www.kaggle.com/datasets/fournierp/captcha-version-2-images

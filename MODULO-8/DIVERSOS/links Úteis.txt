@@ -1,0 +1,29 @@
+Links Úteis 
+
+Métodos de Validação  
+
+https://www.teses.usp.br/teses/disponiveis/95/95131/tde-19052018-122805/publico/CostaSaClebiano2018.pdf 
+
+http://www.rizbicki.ufscar.br/sml.pdf 
+
+Métodos de otimização 
+
+https://www.maxwell.vrac.puc-rio.br/8242/8242_4.PDF 
+
+https://www.ime.unicamp.br/~mac/db/2019-2S-157490.pdf 
+
+https://www.cin.ufpe.br/~tg/2019-2/TG_EC/ArturFranco_Monografia_TG.pdf 
+
+Otimização em hiperparâmetros  
+
+https://carlos-henreis.github.io/files/Monografia_TFG.pdf 
+
+https://www.dca.fee.unicamp.br/~vonzuben/courses/ia353_1s21/topico8_P9_IA353_1s2021.pdf 
+
+Métricas de Avaliação de Desempenho  
+
+https://www.maxwell.vrac.puc-rio.br/4296/4296_4.PDF 
+
+https://www.cin.ufpe.br/~tg/2017-1/vgom_tg.pdf 
+
+https://bioinfo.com.br/wp-content/uploads/2021/07/15_Metricas-de-avaliacao-em-machine-learning_-acuracia-sensibilidade-precisao-especificidade-e-F-score-_-BIOINFO.pdf 
