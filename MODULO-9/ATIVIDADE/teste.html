@@ -1,0 +1,437 @@
+<html>
+  <head>
+    
+  </head>
+  <body class="c17 doc-content">
+    <p class="c5">
+      <span class="c9 c6"><h1>CONFIGURA&Ccedil;&Atilde;O DO SUAP VIA DOCKER</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <ol class="c12 lst-kix_u0efdg6h0urg-0 start" start="1">
+      <li class="c3 c11 li-bullet-0">
+        <span class="c0"
+          >Na home de sua distribui&ccedil;&atilde;o linux - Criar pasta
+          workspace (pode ser qualquer nome) dentro do workspace, clonar o
+          projeto suap_novo.
+        </span>
+      </li>
+    </ol>
+    <p class="c4 c7"><span class="c0"></span></p>
+    <ol class="c12 lst-kix_u0efdg6h0urg-0" start="2">
+      <li class="c3 c11 li-bullet-0">
+        <span class="c0"
+          >Ap&oacute;s clonar o projeto, copiar os arquivos que est&atilde;o
+          dentro de suap_novo/docker_suap para dentro de workspace.</span
+        >
+      </li>
+    </ol>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5 c10">
+      <span>$ </span
+      ><span class="c9 c6"
+        >cp suap_novo/docker_suap/* /home/seu_usuario/workspace/</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5"><span class="c9 c6">INSTALAR O DOCKER</span></p>
+    <p class="c4"><span class="c0"></span></p>
+    <ol class="c12 lst-kix_u0efdg6h0urg-0" start="3">
+      <li class="c3 c11 li-bullet-0">
+        <span class="c0"
+          >Abrir o terminal linux e verificar se o docker est&aacute;
+          instalado.</span
+        >
+      </li>
+    </ol>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5 c10">
+      <span>$ </span><span class="c9 c6">sudo docker ps</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <ol class="c12 lst-kix_u0efdg6h0urg-0" start="4">
+      <li class="c3 c11 li-bullet-0">
+        <span class="c0"
+          >Se estiver instalado, remova a instala&ccedil;&atilde;o padr&atilde;o
+          se esta j&aacute; veio com o SO escolhido.</span
+        >
+      </li>
+    </ol>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.: &nbsp;</span
+      ><span class="c0"
+        >Lembrando que este procedimento foi testado no Ubuntu 18.04, 20.04 e
+        22.04,
+      </span>
+    </p>
+    <p class="c3">
+      <span class="c0"
+        >mas, o procedimento &eacute; o mesmo para qualquer
+        distribui&ccedil;&atilde;o baseada em Debian, para outros tipos de
+        distribui&ccedil;&atilde;o, verificar os comandos que far&atilde;o o
+        mesmo que indicado aqui.</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5"><span class="c9 c6">## Instala&ccedil;&atilde;o ##</span></p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c3">
+      <span>$ </span
+      ><span class="c9 c6">wget -qO- https://get.docker.com/ | sh</span>
+    </p>
+    <p class="c4 c7"><span class="c0"></span></p>
+    <p class="c3">
+      <span>$ </span><span class="c9 c6">sudo apt install python3-pip</span>
+    </p>
+    <p class="c4 c7"><span class="c0"></span></p>
+    <p class="c3">
+      <span>$ </span><span class="c9 c6">sudo pip install docker-compose</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.:</span
+      ><span class="c0"
+        >&nbsp; Por padr&atilde;o, os comandos docker s&atilde;o utilizado com
+        sudo,</span
+      >
+    </p>
+    <p class="c5 c10">
+      <span class="c0"
+        >para evitar o sudo a cada comando, deve-se utilizar as</span
+      >
+    </p>
+    <p class="c5 c10"><span class="c0">seguintes linhas de comando:</span></p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c3">
+      <span>$ </span><span class="c9 c6">sudo usermod -aG docker $USER</span>
+    </p>
+    <p class="c4 c7"><span class="c0"></span></p>
+    <p class="c3"><span>$ </span><span class="c9 c6">newgrp docker</span></p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.:</span
+      ><span class="c0"
+        >&nbsp; Em algumas vers&otilde;es do linux, o docker n&atilde;o
+        inicializa</span
+      >
+    </p>
+    <p class="c5 c10">
+      <span class="c0"
+        >com o sistema, para garantir que isto n&atilde;o ocorra,</span
+      >
+    </p>
+    <p class="c5 c10">
+      <span class="c0">pode-se utilizar as seguintes linhas de comando:</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c3">
+      <span>$ </span
+      ><span class="c9 c6">sudo systemctl enable docker.service</span>
+    </p>
+    <p class="c3">
+      <span>$ </span
+      ><span class="c9 c6">sudo systemctl enable containerd.service</span>
+    </p>
+    <p class="c3">
+      <span>$ </span><span class="c6">sudo systemctl status docker.service</span
+      ><span class="c0">&nbsp;(opcional)</span>
+    </p>
+    <ol class="c12 lst-kix_u0efdg6h0urg-0" start="5">
+      <li class="c3 c11 li-bullet-0">
+        <span class="c0"
+          >Executado todos os passos acima com &ecirc;xito, entrar no
+          diret&oacute;rio criado: WORKSPACE, ou nome que voc&ecirc; atribui no
+          passo 1:</span
+        >
+      </li>
+    </ol>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c3 c10"><span>$ </span><span class="c9 c6">cd workspace</span></p>
+    <p class="c5 c14">
+      <span>$ </span><span class="c6">ls</span
+      ><span class="c0"
+        >&nbsp;# para verificar se os arquivos: Dockerfile, docker-compose.yml e
+        base.txt est&atilde;o &nbsp; &nbsp;presentes no diret&oacute;rio.</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5"><span class="c9 c6">ESTANDO TUDO OK, RODAR:</span></p>
+    <p class="c4"><span class="c6 c9"></span></p>
+    <p class="c3">
+      <span class="c9 c6"
+        >Abrir o arquivo docker-compose.yml e alterar a seguinte linha:</span
+      >
+    </p>
+    <p class="c4 c7"><span class="c9 c6"></span></p>
+    <p class="c3"><span class="c8 c16">pgadmin-compose:</span></p>
+    <p class="c3">
+      <span class="c8 c16"
+        >&nbsp; &nbsp; &nbsp; &nbsp; image: dpage/pgadmin4</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c8 c16"
+        >&nbsp; &nbsp; &nbsp; &nbsp; #build: &quot;./pgadmin&quot;</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c8 c16"
+        >&nbsp; &nbsp; &nbsp; &nbsp; container_name: pg-container</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c8 c16">&nbsp; &nbsp; &nbsp; &nbsp; environment:</span>
+    </p>
+    <p class="c3">
+      <span class="c15">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span
+      ><span class="c6 c15">PGADMIN_DEFAULT_EMAIL: &quot;</span
+      ><span class="c2"
+        ><a class="c1" href="mailto:valdirdpg@gmail.com"
+          >valdirdpg@gmail.com</a
+        ></span
+      ><span class="c8 c6">&quot; &rarr; seu email</span>
+    </p>
+    <p class="c3">
+      <span class="c8 c6"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PGADMIN_DEFAULT_PASSWORD:
+        &quot;123456&quot; &mdash;&gt; pode ser outra.</span
+      >
+    </p>
+    <p class="c4 c7"><span class="c9 c6"></span></p>
+    <p class="c5 c10">
+      <span class="c0">Ap&oacute;s isso, pode rodar o comando abaixo:</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5 c10">
+      <span>$ </span><span class="c9 c6">docker-compose up -d</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.:</span
+      ><span class="c0"
+        >&nbsp; No geral, a instala&ccedil;&atilde;o ocorre sem erros. Existe
+        uma linha do Dokerfile</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c0"
+        >que pode gerar um erro A linha onde se encontra o LibereOffice, a
+        vers&atilde;o constantemente atualiza:</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c3">
+      <span class="c15 c6"
+        >&amp;&amp; wget
+        https://download.documentfoundation.org/libreoffice/stable/7.5.3/deb/x86_64/LibreOffice_7.5</span
+      ><span>.3_</span><span class="c8 c6">Linux_x86-64_deb.tar.gz \</span>
+    </p>
+    <p class="c3">
+      <span class="c8 c6"
+        >&nbsp; &nbsp; &amp;&amp; tar xvzf
+        LibreOffice_7.5.3_Linux_x86-64_deb.tar.gz \</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c8 c6"
+        >&nbsp; &nbsp; &amp;&amp; cd LibreOffice_7.5.3.2_Linux_x86-64_deb//DEBS/
+        \ &nbsp;
+      </span>
+    </p>
+    <p class="c3">
+      <span class="c8 c6">&nbsp; &nbsp; &amp;&amp; dpkg -i * </span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.: </span
+      ><span class="c0"
+        >Atualmente est&aacute; na vers&atilde;o LibreOffice_7.5.4, Antes de
+        rodar o comando do &nbsp; &nbsp; &nbsp;docker-compose, verificar estas
+        linhas no final do arquivo, pois o mesmo
+      </span>
+    </p>
+    <p class="c5">
+      <span class="c0">n&atilde;o ter sido atualizado no master do suap</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c3"><span class="c9 c6">Dever&aacute; ficar assim:</span></p>
+    <p class="c4 c7"><span class="c0"></span></p>
+    <p class="c3">
+      <span class="c8 c6"
+        >&amp;&amp; wget
+        https://download.documentfoundation.org/libreoffice/stable/7.5.3/deb/x86_64/LibreOffice_7.5.4_Linux_x86-64_deb.tar.gz
+        \</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c8 c6"
+        >&nbsp; &nbsp; &amp;&amp; tar xvzf
+        LibreOffice_7.5.4_Linux_x86-64_deb.tar.gz \</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c6 c8"
+        >&nbsp; &nbsp; &amp;&amp; cd LibreOffice_7.5.4.2_Linux_x86-64_deb//DEBS/
+        \ &nbsp;
+      </span>
+    </p>
+    <p class="c3">
+      <span class="c15 c6">&nbsp; &nbsp; &amp;&amp; dpkg -i * </span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c8 c6"
+        >Ou pode simplesmente comentar as linhas citadas e fazer os ajustes
+        pertinentes &agrave;s quebras de linha.</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.: </span
+      ><span class="c0"
+        >Internamente, &nbsp;a imagem do docker roda com o usu&aacute;rio root,
+        arquivos gerados dentro do container ou da imagem podem ficar sem
+        permiss&atilde;o de escrita,</span
+      >
+    </p>
+    <p class="c5">
+      <span class="c0">dentro de workspace rodar este comando:</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5 c10">
+      <span>$ </span><span class="c9 c6">sudo chmod -R 777 *</span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c0"
+        >Dentro do diret&oacute;rio workspace o docker ir&aacute; criar dois
+        volumes: DB e PGADMIN,
+      </span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span
+        >Dentro do PGADMIN ter&aacute; um diret&oacute;rio chamado STORAGE e
+        dentro dele, ter&aacute; outra pasta com o nome &nbsp;do email que
+        voc&ecirc; substituiu no </span
+      ><span class="c15 c6">docker-compose.yml, </span
+      ><span class="c0"
+        >dentro deste diret&oacute;rio dever&aacute; ser colocado o arquivo de
+        backup do suap.</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.: &nbsp;</span
+      ><span>substituir o email &nbsp;que est&aacute; como</span
+      ><span class="c6">&nbsp;</span
+      ><span class="c13 c6"
+        ><a class="c1" href="mailto:valdirdpg@gmail.com"
+          >valdirdpg@gmail.com</a
+        ></span
+      ><span class="c6">, </span
+      ><span
+        >&eacute; importante, pois ser&aacute; com este email e a senha
+        padr&atilde;o:</span
+      ><span class="c6">&nbsp;123456, </span
+      ><span>que voc&ecirc; entrar&aacute; no</span
+      ><span class="c9 c6">&nbsp;pgadmin4</span>
+    </p>
+    <p class="c4"><span class="c9 c6"></span></p>
+    <p class="c5">
+      <span class="c6">Depois disso, acessar o pgadmin no navegador </span
+      ><span class="c6 c13"
+        ><a
+          class="c1"
+          href="https://www.google.com/url?q=http://localhost:16543&amp;sa=D&amp;source=editors&amp;ust=1691095316244517&amp;usg=AOvVaw3UHqa2naRCin3G5Nhn90mJ"
+          >http://localhost:16543</a
+        ></span
+      ><span class="c9 c6"
+        >, usando as credenciais acima, criar o banco suap e fazer o
+        restore.</span
+      >
+    </p>
+    <p class="c4"><span class="c9 c6"></span></p>
+    <p class="c5">
+      <span class="c0"
+        >Lembrar que tem que configurar o settings.py do projeto, na linha de
+        acesso ao BD:</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c3"><span class="c0">DATABASES = {</span></p>
+    <p class="c3"><span class="c0">&nbsp; &nbsp; &#39;default&#39;: {</span></p>
+    <p class="c3">
+      <span class="c0"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &#39;ENGINE&#39;:
+        &#39;django.db.backends.postgresql_psycopg2&#39;,</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c0"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &#39;NAME&#39;: &#39;suap_novo&#39;,
+      </span>
+    </p>
+    <p class="c3">
+      <span class="c0"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &#39;USER&#39;: &#39;suap&#39;,</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c0"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &#39;PASSWORD&#39;: &#39;123456&#39;,</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c0"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &#39;HOST&#39;: &#39;db&#39;,</span
+      >
+    </p>
+    <p class="c3">
+      <span class="c0"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &#39;PORT&#39;: &#39;5432&#39;,</span
+      >
+    </p>
+    <p class="c3"><span class="c0">&nbsp; &nbsp; }</span></p>
+    <p class="c3"><span class="c0">}</span></p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c0"
+        >Feito isso, a aplica&ccedil;&atilde;o ir&aacute; rodar normalmente.
+      </span>
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c6">OBS.: </span
+      ><span
+        >Usar o Visual Code ou PyCharm profissional para editar e executar os
+        containers. Sugiro o pycharm, mais o visual code tem um plugin </span
+      ><span class="c6">Docker (Microsoft), </span
+      ><span class="c0"
+        >que ajuda 100% a manusear e dar manuten&ccedil;&atilde;o no ambiente de
+        desenvolvimento.</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c0"
+        >Para configurar o debugging do docker no pycharm, seguir este
+        tutorial:</span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c5">
+      <span class="c13"
+        ><a
+          class="c1"
+          href="https://www.google.com/url?q=https://testdriven.io/blog/django-debugging-pycharm/&amp;sa=D&amp;source=editors&amp;ust=1691095316246109&amp;usg=AOvVaw3Cq0LGLyv16ePFQFgBqCd5"
+          >https://testdriven.io/blog/django-debugging-pycharm/</a
+        ></span
+      >
+    </p>
+    <p class="c4"><span class="c0"></span></p>
+    <p class="c4"><span class="c0"></span></p>
+  </body>
+</html>
